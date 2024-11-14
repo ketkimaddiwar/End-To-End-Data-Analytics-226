@@ -1,0 +1,56 @@
+[2024-11-13T20:15:21.584+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-13T20:15:21.616+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2024-11-13T20:15:08.270342+00:00 [queued]>
+[2024-11-13T20:15:21.623+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_test manual__2024-11-13T20:15:08.270342+00:00 [queued]>
+[2024-11-13T20:15:21.623+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-13T20:15:21.632+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test> on 2024-11-13 20:15:08.270342+00:00
+[2024-11-13T20:15:21.639+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_test', 'manual__2024-11-13T20:15:08.270342+00:00', '--job-id', '8392', '--raw', '--subdir', 'DAGS_FOLDER/build_elt_with_dbt.py', '--cfg-path', '/tmp/tmphy6mrjq5']
+[2024-11-13T20:15:21.643+0000] {standard_task_runner.py:91} INFO - Job 8392: Subtask dbt_test
+[2024-11-13T20:15:21.643+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=624) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-13T20:15:21.647+0000] {standard_task_runner.py:63} INFO - Started process 625 to run task
+[2024-11-13T20:15:21.695+0000] {task_command.py:426} INFO - Running <TaskInstance: BuildELT_dbt.dbt_test manual__2024-11-13T20:15:08.270342+00:00 [running]> on host 4a1c99736074
+[2024-11-13T20:15:21.808+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2024-11-13T20:15:08.270342+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-13T20:15:08.270342+00:00'
+[2024-11-13T20:15:21.810+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-13T20:15:21.830+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-13T20:15:21.832+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /opt/***/dbt --project-dir /opt/***/dbt']
+[2024-11-13T20:15:21.841+0000] {subprocess.py:86} INFO - Output:
+[2024-11-13T20:15:23.390+0000] {subprocess.py:93} INFO - [0m20:15:23  Running with dbt=1.8.7
+[2024-11-13T20:15:24.234+0000] {subprocess.py:93} INFO - [0m20:15:24  Registered adapter: snowflake=1.8.4
+[2024-11-13T20:15:24.490+0000] {subprocess.py:93} INFO - [0m20:15:24  Found 6 models, 1 snapshot, 2 data tests, 2 sources, 459 macros
+[2024-11-13T20:15:24.493+0000] {subprocess.py:93} INFO - [0m20:15:24
+[2024-11-13T20:15:25.851+0000] {subprocess.py:93} INFO - [0m20:15:25  Concurrency: 1 threads (target='dev')
+[2024-11-13T20:15:25.854+0000] {subprocess.py:93} INFO - [0m20:15:25
+[2024-11-13T20:15:25.870+0000] {subprocess.py:93} INFO - [0m20:15:25  1 of 2 START test not_null_stock_indicators_symbol_date_id ..................... [RUN]
+[2024-11-13T20:15:26.680+0000] {subprocess.py:93} INFO - [0m20:15:26  1 of 2 PASS not_null_stock_indicators_symbol_date_id ........................... [[32mPASS[0m in 0.81s]
+[2024-11-13T20:15:26.688+0000] {subprocess.py:93} INFO - [0m20:15:26  2 of 2 START test unique_stock_indicators_symbol_date_id ....................... [RUN]
+[2024-11-13T20:15:27.448+0000] {subprocess.py:93} INFO - [0m20:15:27  2 of 2 FAIL 180 unique_stock_indicators_symbol_date_id ......................... [[31mFAIL 180[0m in 0.76s]
+[2024-11-13T20:15:27.458+0000] {subprocess.py:93} INFO - [0m20:15:27
+[2024-11-13T20:15:27.459+0000] {subprocess.py:93} INFO - [0m20:15:27  Finished running 2 data tests in 0 hours 0 minutes and 2.96 seconds (2.96s).
+[2024-11-13T20:15:27.524+0000] {subprocess.py:93} INFO - [0m20:15:27
+[2024-11-13T20:15:27.526+0000] {subprocess.py:93} INFO - [0m20:15:27  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-11-13T20:15:27.528+0000] {subprocess.py:93} INFO - [0m20:15:27
+[2024-11-13T20:15:27.530+0000] {subprocess.py:93} INFO - [0m20:15:27  [31mFailure in test unique_stock_indicators_symbol_date_id (models/schema.yml)[0m
+[2024-11-13T20:15:27.530+0000] {subprocess.py:93} INFO - [0m20:15:27    Got 180 results, configured to fail if != 0
+[2024-11-13T20:15:27.531+0000] {subprocess.py:93} INFO - [0m20:15:27
+[2024-11-13T20:15:27.532+0000] {subprocess.py:93} INFO - [0m20:15:27    compiled code at target/compiled/lab2/models/schema.yml/unique_stock_indicators_symbol_date_id.sql
+[2024-11-13T20:15:27.532+0000] {subprocess.py:93} INFO - [0m20:15:27
+[2024-11-13T20:15:27.533+0000] {subprocess.py:93} INFO - [0m20:15:27  Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[2024-11-13T20:15:28.437+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-11-13T20:15:28.439+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-13T20:15:28.475+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-13T20:15:28.488+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=BuildELT_dbt, task_id=dbt_test, run_id=manual__2024-11-13T20:15:08.270342+00:00, execution_date=20241113T201508, start_date=20241113T201521, end_date=20241113T201528
+[2024-11-13T20:15:28.514+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 8392 for task dbt_test (Bash command failed. The command returned a non-zero exit code 1.; 625)
+[2024-11-13T20:15:28.556+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-13T20:15:28.601+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stock_indicators
+    description: "Analytics model for moving averages"
+    columns:
+      - name: symbol_date_id
+        description: "Unique identifier for each stock price record"
+        data_tests:
+          - unique
+          - not_null

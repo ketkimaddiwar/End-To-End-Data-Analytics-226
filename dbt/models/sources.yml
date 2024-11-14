@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: dev
+    schema: raw_data
+    description: "Schema which stores raw tables (ETL)"
+    tables:
+      - name: stock_table
+        identifier: stock_table
+        description: "Stock data"
+  - name: analytics
+    database: dev
+    schema: analytics
+    description: "Schema with stores moving averages"
+    tables:
+      - name: stock_indicators
+        identifier: stock_indicators
+        description: "Stock indicators"
